@@ -50,6 +50,7 @@ class e14 {
 
     }
 }
+
 or
 
 import java.util.Scanner;
