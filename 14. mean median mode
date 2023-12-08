@@ -1,0 +1,100 @@
+package easy;
+
+import java.util.Scanner;
+
+class e14 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the array size: ");
+        int size = sc.nextInt();
+        float[] arr = new float[size];
+
+        for (int i = 0; i < size; i++) {
+            arr[i] = sc.nextFloat();
+        }
+
+        float mean = 0;
+
+        for (int i = 0; i < size; i++) {
+            mean += arr[i];
+        }
+        mean = mean / size;
+        System.out.println("Mean of the given elements is: " + mean);
+
+        float median = 0;
+
+        if (size % 2 == 0) {
+            median = (arr[size / 2] + arr[(size - 1) / 2]) / 2;
+        } else {
+            median = arr[size / 2];
+        }
+        System.out.println("Median of the given elements is: " + median);
+
+        float mode = 0;
+        int maxCount = 0;
+
+        for (int i = 0; i < size; i++) {
+            int count = 0;
+            for (int j = 0; j < size; j++) {
+                if (arr[j] == arr[i]) {
+                    count++;
+                }
+            }
+            if (count > maxCount) {
+                maxCount = count;
+                mode = arr[i];
+            }
+        }
+
+        System.out.println("Mode of the given elements is: " + mode);
+
+    }
+}
+or
+
+import java.util.Scanner;
+class arr
+{
+public static void main(String[] args)
+{
+Scanner s=new Scanner(System.in);
+System.out.print("Enter the array size: ");
+int size=s.nextInt();
+float[] arr=new float[size];
+float msum=0;
+System.out.print("Enter the array elements: ");
+for(int i=0;i<size;i++){
+arr[i]=s.nextFloat();
+msum+=arr[i];
+}
+float temp=0;
+for(int i=0;i<size;i++){
+for(int j=0;j<size;j++){
+if(arr[i]<arr[j]){
+temp=arr[i];
+arr[i]=arr[j];
+arr[j]=temp;
+}
+}
+}
+System.out.println("Mean: "+(int)(msum/size));
+if(size%2==0)
+System.out.println("Median: "+(int)((arr[size/2]+arr[(size/2)+1])/2));
+else
+System.out.println("Median: "+(int)(arr[size/2]));
+float max=0;
+int o_count=0,n_count=0;
+for(int i=0;i<size;i++){
+for(int j=0;j<size;j++){
+if(arr[i]==arr[j])
+n_count++;
+}
+if(o_count<n_count){
+max=arr[i];
+o_count=n_count;
+}
+n_count=0;
+}
+System.out.print("Mode: "+(int)max);
+}
+} 
