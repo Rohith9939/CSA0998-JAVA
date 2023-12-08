@@ -1,0 +1,43 @@
+package easy;
+
+import java.util.Scanner;
+
+public class e38
+ {
+    public static void main(String[] args) 
+{
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter Date (MM/DD/YYYY):");
+        String inputDate = scanner.nextLine();
+
+        
+        int year = extractYear(inputDate);
+
+
+        if (isLeapYear(year)) {
+            System.out.println("Given year is a Leap Year");
+        } else {
+            System.out.println("Given year is a Non-Leap Year");
+        }
+
+    }
+
+
+    private static int extractYear(String inputDate) {
+        try {
+            String[] dateParts = inputDate.split("/");
+            return Integer.parseInt(dateParts[2]);
+        } catch (NumberFormatException | ArrayIndexOutOfBoundsException e) {
+            System.out.println("Invalid date format. Please enter the date in MM/DD/YYYY format.");
+            System.exit(0);
+            return 0; 
+        }
+    }
+
+  
+    private static boolean isLeapYear(int year) {
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    }
+}
+
