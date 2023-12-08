@@ -1,0 +1,87 @@
+class Special {
+    public static void main(String args[]) {
+        String input;
+        int numcount = 0, alphacount = 0, splcount = 0;
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a input:");
+        input = sc.nextLine();
+
+        int n = input.length();
+
+        for (int i = 0; i < n; i++) {
+            char ch = input.charAt(i);
+
+            if (ch >= '0' && ch <= '9') {
+                numcount += 1;
+            } else if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
+                alphacount += 1;
+            } else {
+                splcount += 1;
+                System.out.println(ch);
+                System.out.println("Number of Special Characters: " + splcount);
+            }
+        }
+
+    }
+}
+
+Or:
+import java.util.*;
+public class e5 {
+	public static void main(String args[])
+	{
+		int splcount=0;
+		String str;
+		char ch;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a string:");
+		str=sc.nextLine();
+		System.out.println("Speacial characters are:");
+		for(int i=0; i<str.length();i++)
+		{
+			ch=str.charAt(i);
+			if(!((ch>='A' && ch<='Z') || (ch>='a' && ch<='z') ||(ch>='0' && ch<='9') || (ch==' ')))
+			{
+				System.out.println(ch);
+				splcount++;
+			}
+		}
+		System.out.println("Total number of speacial characters is:" +splcount);		
+	}
+
+}
+
+
+
+Or:
+
+import java.util.Scanner;
+
+public class e5r {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter a line of text:");
+        String inputLine = sc.nextLine();
+
+        int specialCharacterCount = 0;
+
+        System.out.println("Special characters in the line:");
+
+        for (int i = 0; i < inputLine.length(); i++) {
+            char currentChar = inputLine.charAt(i);
+
+            
+            if (!Character.isLetterOrDigit(currentChar) && !Character.isWhitespace(currentChar)) {
+                System.out.print(currentChar + " ");
+                specialCharacterCount++;
+            }
+        }
+
+        System.out.println("Number of special characters: " + specialCharacterCount);
+
+        sc.close();
+    }
+}
+
