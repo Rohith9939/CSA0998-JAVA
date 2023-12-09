@@ -1,0 +1,28 @@
+import java.util.*;
+public class SumofSeries
+{
+    int n,sum=0;
+    SumofSeries()
+    {
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter a number:");
+        n=s.nextInt();
+    }
+    void cal()
+    {
+        for(int i=0;i<=n;i++)
+        {
+            sum=sum+i;
+        }
+    }
+    void output()
+    {
+        System.out.println("Sum = "+sum);
+    }
+    public static void main(String[] arg)
+    {
+        SumofSeries obj=new SumofSeries();
+        obj.cal();
+        obj.output();
+    }
+}
