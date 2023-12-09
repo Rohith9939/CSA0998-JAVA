@@ -1,0 +1,40 @@
+package pattern1;
+
+import java.util.Scanner;
+
+public class sample2 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter the second number: ");
+        int num2 = scanner.nextInt();
+        
+        int sum = num1 + num2;
+        int dif = num1 - num2;
+        int mul = num1 * num2;
+
+
+        try {
+            
+            if (num2 == 0) 
+            {
+                throw new ArithmeticException("Cant Division by zero .");
+               
+            }
+            int div = num1 / num2;
+            System.out.println("Division: " + div);
+            System.out.println("Sum: " + sum);
+            System.out.println("Difference: " + dif);
+            System.out.println("Product: " + mul);
+            
+        } 
+        catch (ArithmeticException e) 
+        {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
