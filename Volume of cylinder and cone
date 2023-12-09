@@ -1,0 +1,57 @@
+class Circle 
+{
+    protected double area;
+    private int r;
+    
+    void get() {
+        r = 5;
+    }
+    
+    void cal() {
+        area = 3.14 * r * r;
+    }
+}
+class Cylinder extends Circle {
+    protected double volume;
+    private int h;
+    
+    void get1() 
+    {
+        h = 10;
+    }
+    
+    void cal1() 
+    {
+        volume = area * h;
+    }
+    
+
+    
+}
+
+
+class Cone extends Cylinder {
+    private double volume2;
+
+    void cal2() {
+         
+        volume2 = (volume / 3);
+    }
+
+    void display() {
+        System.out.println("Area of circle is: " + area);
+        System.out.println("Volume of cylinder is: " + volume);
+        System.out.println("Volume of cone is: " + volume2);
+    }
+}
+
+class Inher {
+    public static void main(String args[]) {
+        Cone obj = new Cone();
+        obj.get();
+        obj.get1();
+        obj.cal();
+        obj.cal1();
+        obj.cal2(); 
+        obj.display();
+    }
