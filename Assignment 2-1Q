@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+class student {
+    int marksPython, marksC, marksMath, marksPhy;
+
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the marks in Python, C, Math, Phy: ");
+        marksPython = sc.nextInt();
+        marksC = sc.nextInt();
+        marksMath = sc.nextInt();
+        marksPhy = sc.nextInt();
+    }
+}
+
+class average extends student {
+    protected int total;
+    protected double average;
+
+    void cal() {
+        total = marksPython + marksC + marksMath + marksPhy;
+        average = total / 4;
+    }
+}
+
+class result extends average {
+    void displayGrade() {
+        System.out.println("Total = " + total);
+        System.out.println("Aggregate = " + average);
+
+        if (average > 75) {
+            System.out.println("DISTINCTION");
+        } else if (average >= 60 && average < 75) {
+            System.out.println("FIRST DIVISION");
+        } else if (average >= 50 && average < 60) {
+            System.out.println("SECOND DIVISION");
+        } else if (average >= 40 && average < 50) {
+            System.out.println("THIRD DIVISION");
+        } else {
+            System.out.println("FAIL");
+        }
+    }
+}
+
+class inh {
+    public static void main(String[] args) {
+        result s = new result(); 
+        s.input();
+        s.cal();
+        s.displayGrade();
+    }
+}
