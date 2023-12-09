@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class simpleintrest
+
+{
+	public static void main(String[] args)
+	{ 
+		System.out.println("enter the values for P,T,R:");
+		Scanner sc=new Scanner(System.in);
+		float P=sc.nextFloat();  
+		float T=sc.nextFloat(); 
+		float R=sc.nextFloat();
+		float SI = (P * T * R) / 100; 
+		System.out.println("Simple interest = " + SI);
+		
+		}
+		
+}
