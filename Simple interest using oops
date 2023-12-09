@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class SimpleInterest {
+    double principal, year, rate;
+    double result;
+
+    void input(double p,double t,double r) 
+    {
+        principal = p;
+        year = t;
+        rate = r;
+    }
+
+    void cal() {
+        result = (principal * year * rate) / 100;
+    }
+
+    void output() {
+        System.out.println("Interest = " + result);
+    }
+
+    public static void main(String[] arg) {
+        SimpleInterest obj = new SimpleInterest();
+        obj.input(2000, 2, 15);
+        obj.cal();
+        obj.output();
+    }
+}
