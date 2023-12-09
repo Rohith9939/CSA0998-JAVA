@@ -1,0 +1,25 @@
+package javamodel;
+
+import java.util.Scanner;
+
+public class m46 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the string: ");
+        String s = sc.nextLine();
+        int n = s.length();
+        String word = "";
+
+        for (int i = n - 1; i >= 0; i--) {
+            char x = s.charAt(i);
+            if (x == ' ') {
+                break;
+            } else {
+                word += x;
+            }
+        }
+
+        System.out.println("Length " + word.length());
+    }
+}
